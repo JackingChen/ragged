@@ -1,6 +1,5 @@
 {
     "Single Hop QA": {
-        "Example": "${dataset_dir}/${dataset}.jsonl"
-        
+        "Example": "/home/jupyter/ragged/data/nq.jsonl"
     }
 }

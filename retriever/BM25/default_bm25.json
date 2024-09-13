@@ -1,5 +1,5 @@
 {
-    "index":"${index_dir}/${corpus}_jsonl",
+    "index":"/home/jupyter/ragged/retriever/index/kilt_wikipedia_jsonl",
     "k":100,
     "num_threads":4
 }

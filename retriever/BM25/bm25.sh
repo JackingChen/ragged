@@ -1,5 +1,6 @@
 #!/bin/bash
 
+prediction_dir=./prediction
 SCRIPT_PATH="$(realpath "$0")"
 RAGGED_PATH="${SCRIPT_PATH%/retriever/BM25/bm25.sh}"
 export PYTHONPATH="$PYTHONPATH:$RAGGED_PATH"

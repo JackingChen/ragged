@@ -41,23 +41,35 @@ def _run_thread(arguments):
         for y in hits:
             # pdb.set_trace()
             try:
+                # print(str(y.docid).strip())
                 doc_data = json.loads(str(y.docid).strip())
+                print(doc_data)
                 doc_data["score"] = y.score
                 doc_data["text"] = y.lucene_document.get('contents').strip()
                 element.append(doc_data)
             except Exception as e:
+                # aaa=ccc
                 # print(e)
+                
+                # print(y.lucene_document.get('contents').strip())
+                
+                # print(e)
+                # print(y.lucene_document.get('contents').strip())
                 page_id, par_id = y.docid.split('_')
                 # pdb.set_trace()
-                element.append(
-                    {
-                        "score": y.score,
-                        "text": y.lucene_document.get('contents').strip(),
-                        "page_id": page_id,
-                        "start_par_id": (int)(par_id),
-                        "end_par_id" : (int)(par_id),
-                    }
-                )
+                try:
+                    element.append(
+                        {
+                            "score": y.score,
+                            "text": y.lucene_document.get('contents').strip(),
+                            "page_id": page_id,
+                            "start_par_id": (int)(par_id),
+                            "end_par_id" : (int)(par_id),
+                        }
+                    )
+                except Exception as ee:
+                    print(ee)
+                    print(str(y.docid).strip())
         provenance[query_id] = element
 
     return provenance
